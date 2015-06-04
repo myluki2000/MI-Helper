@@ -113,6 +113,10 @@ Public Class RigIndex
         RigBrowser.Show()
     End Sub
 
+    Private Sub RigIndex_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        SplitContainer1.SplitterDistance = Me.Height - 80
+    End Sub
+
     Private Sub RigIndex_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         If My.Settings.MILoc = "" Then
             Settings.Show()

@@ -43,7 +43,7 @@ Partial Class RigIndex
         '
         'WB
         '
-        Me.WB.Location = New System.Drawing.Point(861, 29)
+        Me.WB.Location = New System.Drawing.Point(841, 15)
         Me.WB.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WB.Name = "WB"
         Me.WB.Size = New System.Drawing.Size(40, 20)
@@ -53,7 +53,8 @@ Partial Class RigIndex
         '
         'GetRigsButton
         '
-        Me.GetRigsButton.Location = New System.Drawing.Point(12, 8)
+        Me.GetRigsButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GetRigsButton.Location = New System.Drawing.Point(12, 2)
         Me.GetRigsButton.Name = "GetRigsButton"
         Me.GetRigsButton.Size = New System.Drawing.Size(120, 31)
         Me.GetRigsButton.TabIndex = 1
@@ -62,7 +63,8 @@ Partial Class RigIndex
         '
         'SearchButton
         '
-        Me.SearchButton.Location = New System.Drawing.Point(814, 8)
+        Me.SearchButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SearchButton.Location = New System.Drawing.Point(897, 2)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(75, 32)
         Me.SearchButton.TabIndex = 0
@@ -71,15 +73,18 @@ Partial Class RigIndex
         '
         'SearchTB
         '
+        Me.SearchTB.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SearchTB.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchTB.Location = New System.Drawing.Point(264, 12)
+        Me.SearchTB.Location = New System.Drawing.Point(264, 6)
         Me.SearchTB.Name = "SearchTB"
-        Me.SearchTB.Size = New System.Drawing.Size(544, 23)
+        Me.SearchTB.Size = New System.Drawing.Size(627, 23)
         Me.SearchTB.TabIndex = 3
         '
         'StopButton
         '
-        Me.StopButton.Location = New System.Drawing.Point(138, 8)
+        Me.StopButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.StopButton.Location = New System.Drawing.Point(138, 2)
         Me.StopButton.Name = "StopButton"
         Me.StopButton.Size = New System.Drawing.Size(120, 31)
         Me.StopButton.TabIndex = 4
@@ -89,6 +94,7 @@ Partial Class RigIndex
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.IsSplitterFixed = True
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
@@ -105,8 +111,8 @@ Partial Class RigIndex
         Me.SplitContainer1.Panel2.Controls.Add(Me.WB)
         Me.SplitContainer1.Panel2.Controls.Add(Me.SearchButton)
         Me.SplitContainer1.Panel2.Controls.Add(Me.GetRigsButton)
-        Me.SplitContainer1.Size = New System.Drawing.Size(901, 492)
-        Me.SplitContainer1.SplitterDistance = 439
+        Me.SplitContainer1.Size = New System.Drawing.Size(984, 562)
+        Me.SplitContainer1.SplitterDistance = 520
         Me.SplitContainer1.TabIndex = 5
         '
         'ListView2
@@ -115,7 +121,7 @@ Partial Class RigIndex
         Me.ListView2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView2.Location = New System.Drawing.Point(0, 0)
         Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(901, 439)
+        Me.ListView2.Size = New System.Drawing.Size(984, 520)
         Me.ListView2.TabIndex = 9
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
@@ -142,7 +148,7 @@ Partial Class RigIndex
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(901, 439)
+        Me.ListView1.Size = New System.Drawing.Size(984, 520)
         Me.ListView1.TabIndex = 8
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -161,7 +167,7 @@ Partial Class RigIndex
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(901, 492)
+        Me.ClientSize = New System.Drawing.Size(984, 562)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "RigIndex"
         Me.Text = "Rig Index"
