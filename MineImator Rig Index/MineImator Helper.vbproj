@@ -79,6 +79,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrameCalc.Designer.vb">
+      <DependentUpon>FrameCalc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrameCalc.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RigBrowser.Designer.vb">
       <DependentUpon>RigBrowser.vb</DependentUpon>
     </Compile>
@@ -113,6 +119,12 @@
     <Compile Include="Settings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SoundTimeline.Designer.vb">
+      <DependentUpon>SoundTimeline.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SoundTimeline.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Toolbar.Designer.vb">
       <DependentUpon>Toolbar.vb</DependentUpon>
     </Compile>
@@ -121,6 +133,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrameCalc.resx">
+      <DependentUpon>FrameCalc.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RigBrowser.resx">
       <DependentUpon>RigBrowser.vb</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundTimeline.resx">
+      <DependentUpon>SoundTimeline.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Toolbar.resx">
       <DependentUpon>Toolbar.vb</DependentUpon>
@@ -162,6 +180,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frameCalc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RigDownload.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

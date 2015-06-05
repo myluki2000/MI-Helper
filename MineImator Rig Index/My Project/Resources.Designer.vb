@@ -59,5 +59,25 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property frameCalc() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("frameCalc", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property RigDownload() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("RigDownload", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
     End Module
 End Namespace

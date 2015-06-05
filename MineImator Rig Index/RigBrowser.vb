@@ -121,6 +121,7 @@ Public Class RigBrowser
         Else
             WB.Navigate(url)
         End If
+        StatusLabel.Text = "Done"
     End Sub
 
     Private Sub RigBrowser_Load(sender As Object, e As EventArgs) Handles MyBase.Load

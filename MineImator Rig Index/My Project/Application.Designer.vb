@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.MineImator_Helper.RigIndex
+            Me.MainForm = Global.MineImator_Helper.Toolbar
         End Sub
     End Class
 End Namespace

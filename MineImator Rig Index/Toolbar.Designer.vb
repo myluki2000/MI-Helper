@@ -22,17 +22,55 @@ Partial Class Toolbar
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Me.RigDLBox = New System.Windows.Forms.PictureBox()
+        Me.FrameCalcBox = New System.Windows.Forms.PictureBox()
+        Me.MoveTimer = New System.Windows.Forms.Timer(Me.components)
+        CType(Me.RigDLBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FrameCalcBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'RigDLBox
+        '
+        Me.RigDLBox.Image = Global.MineImator_Helper.My.Resources.Resources.RigDownload
+        Me.RigDLBox.Location = New System.Drawing.Point(90, 12)
+        Me.RigDLBox.Name = "RigDLBox"
+        Me.RigDLBox.Size = New System.Drawing.Size(48, 48)
+        Me.RigDLBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.RigDLBox.TabIndex = 1
+        Me.RigDLBox.TabStop = False
+        '
+        'FrameCalcBox
+        '
+        Me.FrameCalcBox.Image = Global.MineImator_Helper.My.Resources.Resources.frameCalc
+        Me.FrameCalcBox.Location = New System.Drawing.Point(12, 12)
+        Me.FrameCalcBox.Name = "FrameCalcBox"
+        Me.FrameCalcBox.Size = New System.Drawing.Size(48, 48)
+        Me.FrameCalcBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.FrameCalcBox.TabIndex = 0
+        Me.FrameCalcBox.TabStop = False
+        '
+        'MoveTimer
+        '
+        Me.MoveTimer.Interval = 15
         '
         'Toolbar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(511, 59)
+        Me.BackColor = System.Drawing.Color.LightGray
+        Me.ClientSize = New System.Drawing.Size(150, 70)
+        Me.Controls.Add(Me.FrameCalcBox)
+        Me.Controls.Add(Me.RigDLBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Toolbar"
         Me.Text = "Toolbar"
+        CType(Me.RigDLBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FrameCalcBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents FrameCalcBox As System.Windows.Forms.PictureBox
+    Friend WithEvents RigDLBox As System.Windows.Forms.PictureBox
+    Friend WithEvents MoveTimer As System.Windows.Forms.Timer
 End Class

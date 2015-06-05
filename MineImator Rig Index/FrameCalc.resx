@@ -117,7 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="MoveTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>This is a frame calculator. It can be useful when you are trying to sync up your animation tosomething, eg. lip syncing.
+
+To use it put in the values you have and leave the field with the value you need empty, then  click on the button and the software will do the rest for you.</value>
+  </data>
 </root>
