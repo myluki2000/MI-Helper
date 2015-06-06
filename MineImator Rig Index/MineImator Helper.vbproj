@@ -89,6 +89,7 @@
     <Compile Include="FrameCalc.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Resources\TreeGen.vb" />
     <Compile Include="RigBrowser.Designer.vb">
       <DependentUpon>RigBrowser.vb</DependentUpon>
     </Compile>

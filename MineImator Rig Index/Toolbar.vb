@@ -102,7 +102,7 @@ Public Class Toolbar
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        TreeGen.Show()
+        Generate.Show()
     End Sub
 
     Private Sub Toolbar_Shown(sender As Object, e As EventArgs) Handles Me.Shown
