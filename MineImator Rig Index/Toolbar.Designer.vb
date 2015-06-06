@@ -26,6 +26,7 @@ Partial Class Toolbar
         Me.RigDLBox = New System.Windows.Forms.PictureBox()
         Me.FrameCalcBox = New System.Windows.Forms.PictureBox()
         Me.MoveTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.RigDLBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FrameCalcBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -54,12 +55,22 @@ Partial Class Toolbar
         '
         Me.MoveTimer.Interval = 15
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(63, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(21, 28)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Toolbar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(150, 70)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.FrameCalcBox)
         Me.Controls.Add(Me.RigDLBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -73,4 +84,5 @@ Partial Class Toolbar
     Friend WithEvents FrameCalcBox As System.Windows.Forms.PictureBox
     Friend WithEvents RigDLBox As System.Windows.Forms.PictureBox
     Friend WithEvents MoveTimer As System.Windows.Forms.Timer
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

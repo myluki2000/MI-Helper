@@ -116,11 +116,4 @@ Public Class RigIndex
     Private Sub RigIndex_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
         SplitContainer1.SplitterDistance = Me.Height - 80
     End Sub
-
-    Private Sub RigIndex_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        If My.Settings.MILoc = "" Then
-            Settings.Show()
-            MsgBox("This is the first time you have started or your settings have been lost. You have to set your Mine-Imator install path. It is located in C:\Users\<yourusername>\Mine-Imator by default.")
-        End If
-    End Sub
 End Class

@@ -56,6 +56,10 @@
     <Reference Include="SevenZipSharp">
       <HintPath>Resources\SevenZipSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Substrate, Version=1.3.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Substrate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -131,6 +135,12 @@
     <Compile Include="Toolbar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TreeGen.Designer.vb">
+      <DependentUpon>TreeGen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TreeGen.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrameCalc.resx">
@@ -156,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Toolbar.resx">
       <DependentUpon>Toolbar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeGen.resx">
+      <DependentUpon>TreeGen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

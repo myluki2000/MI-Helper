@@ -1,4 +1,6 @@
-﻿Public Class Toolbar
+﻿Imports System.IO
+
+Public Class Toolbar
 
     Dim MoveOut As Boolean = True
     Dim YLoc As Integer
@@ -97,5 +99,20 @@
 
     Private Sub RigDLBox_MouseLeave(sender As Object, e As EventArgs) Handles RigDLBox.MouseLeave
         RigDLBox.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        TreeGen.Show()
+    End Sub
+
+    Private Sub Toolbar_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        If My.Settings.MILoc = "" Then
+            If Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) & "\Mine-Imator") Then
+                My.Settings.MILoc = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) & "\Mine-Imator"
+            Else
+                Settings.Show()
+                MsgBox("This is the first time you have started or your settings have been lost. Mine-Imator-Helper could not auto-detect the installation path of your Mine-Imator Installation. Please select it manually.")
+            End If
+        End If
     End Sub
 End Class
