@@ -46,6 +46,7 @@ Partial Class RigIndex
         Me.WB.Location = New System.Drawing.Point(841, 15)
         Me.WB.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WB.Name = "WB"
+        Me.WB.ScriptErrorsSuppressed = True
         Me.WB.Size = New System.Drawing.Size(40, 20)
         Me.WB.TabIndex = 0
         Me.WB.Url = New System.Uri("", System.UriKind.Relative)

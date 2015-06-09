@@ -73,6 +73,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property leaves_oak() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("leaves_oak", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property oak_wood() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("oak_wood", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property RigDownload() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("RigDownload", resourceCulture)

@@ -1,4 +1,5 @@
 ﻿Imports Substrate
+Imports System.Windows
 
 Public Class TreeGen
     Shared BlockLog As New AlphaBlock(17)
@@ -6,46 +7,92 @@ Public Class TreeGen
     Shared schem As Substrate.ImportExport.Schematic
 
     Public Shared Sub GenerateTree(stemHeight As Integer)
+        Dim branchPos As Vector3
+        Dim blockPos As New Vector3
 
         schem = New ImportExport.Schematic(20, 20, 20)
-
 
         Dim BlockLog As New AlphaBlock(17)
         BlockLog.Data = 8
 
-        For i As Integer = 1 To stemHeight
-            schem.Blocks.SetBlock(10, i, 10, New AlphaBlock(17))
+        blockPos.X = 10
+        blockPos.Z = 10
 
-            If i = 4 AndAlso stemHeight > 7 Then
-                GenerateBranch(10, i, 10, "nesw")
-            End If
-        Next
 
         schem.Export("C:\Test\test.schematic")
     End Sub
 
-    Private Shared Sub GenerateBranch(AroundX As Integer, AroundY As Integer, AroundZ As Integer, Directions As String)
+    Private Shared Function GenerateBranch(AroundX As Integer, AroundY As Integer, AroundZ As Integer, Directions As String)
+        Dim branchPos As New Vector3
         Select Case r.Next(0, 4)
             Case 0
                 If Directions.Contains("n") Then
                     BlockLog.Data = 4
-                    schem.Blocks.SetBlock(AroundX, AroundY, AroundZ, BlockLog)
+                    schem.Blocks.SetBlock(AroundX + 1, AroundY, AroundZ, BlockLog)
+
+                    branchPos.X = AroundX + 1
+                    branchPos.Y = AroundY
+                    branchPos.Z = AroundZ
+                    Return branchPos
                 End If
             Case 1
                 If Directions.Contains("e") Then
                     BlockLog.Data = 4
-                    schem.Blocks.SetBlock(AroundX, AroundY, AroundZ, BlockLog)
+                    schem.Blocks.SetBlock(AroundX, AroundY, AroundZ + 1, BlockLog)
+
+                    branchPos.X = AroundX
+                    branchPos.Y = AroundY
+                    branchPos.Z = AroundZ + 1
+                    Return branchPos
                 End If
             Case 2
                 If Directions.Contains("s") Then
                     BlockLog.Data = 8
-                    schem.Blocks.SetBlock(AroundX, AroundY, AroundZ, BlockLog)
+                    schem.Blocks.SetBlock(AroundX - 1, AroundY, AroundZ, BlockLog)
+
+                    branchPos.X = AroundX - 1
+                    branchPos.Y = AroundY
+                    branchPos.Z = AroundZ
+                    Return branchPos
                 End If
             Case 3
                 If Directions.Contains("w") Then
                     BlockLog.Data = 8
-                    schem.Blocks.SetBlock(AroundX, AroundY, AroundZ, BlockLog)
+                    schem.Blocks.SetBlock(AroundX, AroundY, AroundZ - 1, BlockLog)
+
+                    branchPos.X = AroundX
+                    branchPos.Y = AroundY
+                    branchPos.Z = AroundZ - 1
+                    Return branchPos
                 End If
         End Select
+
+        branchPos.X = -1
+        branchPos.Y = -1
+        branchPos.Z = -1
+        Return branchPos
+    End Function
+
+    Private Shared Sub GenLeavesAround(Radius As Integer, Point As Vector3)
+        Dim counter As Integer = 0
+
+        For i As Integer = 1 To Radius
+            schem.Blocks.SetBlock(CInt(Point.X) + i, CInt(Point.Y), CInt(Point.Z), New AlphaBlock(BlockType.LEAVES))
+            schem.Blocks.SetBlock(CInt(Point.X) - i, CInt(Point.Y), CInt(Point.Z), New AlphaBlock(BlockType.LEAVES))
+            schem.Blocks.SetBlock(CInt(Point.X), CInt(Point.Y), CInt(Point.Z) + i, New AlphaBlock(BlockType.LEAVES))
+            schem.Blocks.SetBlock(CInt(Point.X), CInt(Point.Y), CInt(Point.Z) - i, New AlphaBlock(BlockType.LEAVES))
+
+
+            If i = Radius Then
+                While counter < i
+                    For cI As Integer = 1 To counter
+                        If r.Next(0, 6) < 5 OrElse cI <> counter Then
+                            schem.Blocks.SetBlock(CInt(Point.X) + cI, CInt(Point.Y), CInt(Point.Z) - i + counter, New AlphaBlock(BlockType.LEAVES))
+                        End If
+                    Next
+                        counter += 1
+                End While
+            End If
+        Next
     End Sub
 End Class
