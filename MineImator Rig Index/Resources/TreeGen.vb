@@ -22,6 +22,41 @@ Public Class TreeGen
         schem.Export("C:\Test\test.schematic")
     End Sub
 
+    Public Shared Sub GenerateSimpleTree()
+        schem = New ImportExport.Schematic(21, 20, 21)
+
+        For Each pic As Object In Generate.SimpleTreePage.Controls
+            If TypeOf pic Is PictureBox Then
+                Dim block As New AlphaBlock(BlockType.AIR)
+                Select Case pic.tag
+                    Case "Wood"
+                        block.ID = BlockType.WOOD
+                    Case "Leaves"
+                        block.ID = BlockType.LEAVES
+                    Case "Air"
+                        block.ID = BlockType.AIR
+                End Select
+                schem.Blocks.SetBlock(10, CInt(Right(pic.name, 1)) - 1, 10, block)
+            End If
+        Next
+
+        For Each UpDown As Object In Generate.SimpleTreePage.Controls
+            If TypeOf UpDown Is NumericUpDown Then
+                Dim Pos As New Vector3
+                Pos.X = 10
+                Pos.Y = CInt(Right(UpDown.name, 1)) - 1
+                Pos.Z = 10
+
+                GenLeavesAround(UpDown.value, Pos)
+            End If
+        Next
+
+        Generate.SFDialog.InitialDirectory = My.Settings.MILoc
+        If Generate.SFDialog.ShowDialog = DialogResult.OK Then
+            schem.Export(Generate.SFDialog.FileName)
+        End If
+    End Sub
+
     Private Shared Function GenerateBranch(AroundX As Integer, AroundY As Integer, AroundZ As Integer, Directions As String)
         Dim branchPos As New Vector3
         Select Case r.Next(0, 4)
@@ -88,6 +123,18 @@ Public Class TreeGen
                     For cI As Integer = 1 To counter
                         If r.Next(0, 6) < 5 OrElse cI <> counter Then
                             schem.Blocks.SetBlock(CInt(Point.X) + cI, CInt(Point.Y), CInt(Point.Z) - i + counter, New AlphaBlock(BlockType.LEAVES))
+                        End If
+
+                        If r.Next(0, 6) < 5 OrElse cI <> counter Then
+                            schem.Blocks.SetBlock(CInt(Point.X) - cI, CInt(Point.Y), CInt(Point.Z) - i + counter, New AlphaBlock(BlockType.LEAVES))
+                        End If
+
+                        If r.Next(0, 6) < 5 OrElse cI <> counter Then
+                            schem.Blocks.SetBlock(CInt(Point.X) + cI, CInt(Point.Y), CInt(Point.Z) + i - counter, New AlphaBlock(BlockType.LEAVES))
+                        End If
+
+                        If r.Next(0, 6) < 5 OrElse cI <> counter Then
+                            schem.Blocks.SetBlock(CInt(Point.X) - cI, CInt(Point.Y), CInt(Point.Z) + i - counter, New AlphaBlock(BlockType.LEAVES))
                         End If
                     Next
                         counter += 1

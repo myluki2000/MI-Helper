@@ -42,6 +42,7 @@ Partial Class Generate
         Me.TreeMid3 = New System.Windows.Forms.PictureBox()
         Me.TreeMid2 = New System.Windows.Forms.PictureBox()
         Me.TreeMid1 = New System.Windows.Forms.PictureBox()
+        Me.SFDialog = New System.Windows.Forms.SaveFileDialog()
         CType(Me.StemLengthUD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.SimpleTreePage.SuspendLayout()
@@ -80,6 +81,7 @@ Partial Class Generate
         Me.Label1.Size = New System.Drawing.Size(70, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Stem Length:"
+        Me.Label1.Visible = False
         '
         'StemLengthUD
         '
@@ -89,6 +91,7 @@ Partial Class Generate
         Me.StemLengthUD.Name = "StemLengthUD"
         Me.StemLengthUD.Size = New System.Drawing.Size(433, 20)
         Me.StemLengthUD.TabIndex = 3
+        Me.StemLengthUD.Visible = False
         '
         'TabControl1
         '
@@ -96,10 +99,10 @@ Partial Class Generate
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.SimpleTreePage)
-        Me.TabControl1.Location = New System.Drawing.Point(7, 33)
+        Me.TabControl1.Location = New System.Drawing.Point(7, 7)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(511, 425)
+        Me.TabControl1.Size = New System.Drawing.Size(511, 451)
         Me.TabControl1.TabIndex = 4
         '
         'SimpleTreePage
@@ -122,7 +125,7 @@ Partial Class Generate
         Me.SimpleTreePage.Location = New System.Drawing.Point(4, 22)
         Me.SimpleTreePage.Name = "SimpleTreePage"
         Me.SimpleTreePage.Padding = New System.Windows.Forms.Padding(3)
-        Me.SimpleTreePage.Size = New System.Drawing.Size(503, 399)
+        Me.SimpleTreePage.Size = New System.Drawing.Size(503, 425)
         Me.SimpleTreePage.TabIndex = 0
         Me.SimpleTreePage.Text = "Simple Tree"
         Me.SimpleTreePage.UseVisualStyleBackColor = True
@@ -204,6 +207,7 @@ Partial Class Generate
         Me.TreeMid7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.TreeMid7.TabIndex = 6
         Me.TreeMid7.TabStop = False
+        Me.TreeMid7.Tag = "Wood"
         '
         'TreeMid6
         '
@@ -215,6 +219,7 @@ Partial Class Generate
         Me.TreeMid6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.TreeMid6.TabIndex = 5
         Me.TreeMid6.TabStop = False
+        Me.TreeMid6.Tag = "Wood"
         '
         'TreeMid5
         '
@@ -226,6 +231,7 @@ Partial Class Generate
         Me.TreeMid5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.TreeMid5.TabIndex = 4
         Me.TreeMid5.TabStop = False
+        Me.TreeMid5.Tag = "Wood"
         '
         'TreeMid4
         '
@@ -237,6 +243,7 @@ Partial Class Generate
         Me.TreeMid4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.TreeMid4.TabIndex = 3
         Me.TreeMid4.TabStop = False
+        Me.TreeMid4.Tag = "Wood"
         '
         'TreeMid3
         '
@@ -248,6 +255,7 @@ Partial Class Generate
         Me.TreeMid3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.TreeMid3.TabIndex = 2
         Me.TreeMid3.TabStop = False
+        Me.TreeMid3.Tag = "Wood"
         '
         'TreeMid2
         '
@@ -259,6 +267,7 @@ Partial Class Generate
         Me.TreeMid2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.TreeMid2.TabIndex = 1
         Me.TreeMid2.TabStop = False
+        Me.TreeMid2.Tag = "Wood"
         '
         'TreeMid1
         '
@@ -272,15 +281,19 @@ Partial Class Generate
         Me.TreeMid1.TabStop = False
         Me.TreeMid1.Tag = "Wood"
         '
+        'SFDialog
+        '
+        Me.SFDialog.Filter = "Schematic Files|*.schematic"
+        '
         'Generate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(530, 505)
-        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.StemLengthUD)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GenButton)
+        Me.Controls.Add(Me.TabControl1)
         Me.Name = "Generate"
         Me.Text = "TreeGen"
         CType(Me.StemLengthUD, System.ComponentModel.ISupportInitialize).EndInit()
@@ -325,4 +338,5 @@ Partial Class Generate
     Friend WithEvents LeavesUD5 As System.Windows.Forms.NumericUpDown
     Friend WithEvents LeavesUD6 As System.Windows.Forms.NumericUpDown
     Friend WithEvents LeavesUD7 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents SFDialog As System.Windows.Forms.SaveFileDialog
 End Class

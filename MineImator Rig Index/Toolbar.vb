@@ -101,7 +101,7 @@ Public Class Toolbar
         RigDLBox.BackColor = Color.Transparent
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Generate.Show()
     End Sub
 
@@ -114,5 +114,21 @@ Public Class Toolbar
                 MsgBox("This is the first time you have started or your settings have been lost. Mine-Imator-Helper could not auto-detect the installation path of your Mine-Imator Installation. Please select it manually.")
             End If
         End If
+    End Sub
+
+    Private Sub TreeGenBox_Click(sender As Object, e As EventArgs) Handles TreeGenBox.Click
+        Generate.Show()
+    End Sub
+
+    Private Sub TreeGenBox_MouseHover(sender As Object, e As EventArgs) Handles TreeGenBox.MouseHover
+        MoveOut = True
+        YLoc = Me.Location.Y
+        MoveTimer.Start()
+
+        TreeGenBox.BackColor = Color.CornflowerBlue
+    End Sub
+
+    Private Sub TreeGenBox_MouseLeave(sender As Object, e As EventArgs) Handles TreeGenBox.MouseLeave
+        TreeGenBox.BackColor = Color.Transparent
     End Sub
 End Class
