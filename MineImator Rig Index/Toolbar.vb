@@ -120,6 +120,10 @@ Public Class Toolbar
         Generate.Show()
     End Sub
 
+    Private Sub TreeGenBox_MouseDown(sender As Object, e As MouseEventArgs) Handles TreeGenBox.MouseDown
+        TreeGenBox.BackColor = Color.DarkBlue
+    End Sub
+
     Private Sub TreeGenBox_MouseHover(sender As Object, e As EventArgs) Handles TreeGenBox.MouseHover
         MoveOut = True
         YLoc = Me.Location.Y
@@ -130,5 +134,25 @@ Public Class Toolbar
 
     Private Sub TreeGenBox_MouseLeave(sender As Object, e As EventArgs) Handles TreeGenBox.MouseLeave
         TreeGenBox.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub CloseBox_Click(sender As Object, e As EventArgs) Handles CloseBox.Click
+        End
+    End Sub
+
+    Private Sub CloseBox_MouseDown(sender As Object, e As MouseEventArgs) Handles CloseBox.MouseDown
+        CloseBox.BackColor = Color.DarkBlue
+    End Sub
+
+    Private Sub CloseBox_MouseHover(sender As Object, e As EventArgs) Handles CloseBox.MouseHover
+        MoveOut = True
+        YLoc = Me.Location.Y
+        MoveTimer.Start()
+
+        CloseBox.BackColor = Color.CornflowerBlue
+    End Sub
+
+    Private Sub CloseBox_MouseLeave(sender As Object, e As EventArgs) Handles CloseBox.MouseLeave
+        CloseBox.BackColor = Color.Transparent
     End Sub
 End Class

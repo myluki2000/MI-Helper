@@ -23,38 +23,30 @@ Partial Class Toolbar
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.RigDLBox = New System.Windows.Forms.PictureBox()
-        Me.FrameCalcBox = New System.Windows.Forms.PictureBox()
         Me.MoveTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.CloseBox = New System.Windows.Forms.PictureBox()
         Me.TreeGenBox = New System.Windows.Forms.PictureBox()
-        CType(Me.RigDLBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FrameCalcBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FrameCalcBox = New System.Windows.Forms.PictureBox()
+        Me.RigDLBox = New System.Windows.Forms.PictureBox()
+        CType(Me.CloseBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TreeGenBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FrameCalcBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RigDLBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'RigDLBox
-        '
-        Me.RigDLBox.Image = Global.MineImator_Helper.My.Resources.Resources.RigDownload
-        Me.RigDLBox.Location = New System.Drawing.Point(66, 12)
-        Me.RigDLBox.Name = "RigDLBox"
-        Me.RigDLBox.Size = New System.Drawing.Size(48, 48)
-        Me.RigDLBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.RigDLBox.TabIndex = 1
-        Me.RigDLBox.TabStop = False
-        '
-        'FrameCalcBox
-        '
-        Me.FrameCalcBox.Image = Global.MineImator_Helper.My.Resources.Resources.frameCalc
-        Me.FrameCalcBox.Location = New System.Drawing.Point(12, 12)
-        Me.FrameCalcBox.Name = "FrameCalcBox"
-        Me.FrameCalcBox.Size = New System.Drawing.Size(48, 48)
-        Me.FrameCalcBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.FrameCalcBox.TabIndex = 0
-        Me.FrameCalcBox.TabStop = False
         '
         'MoveTimer
         '
         Me.MoveTimer.Interval = 15
+        '
+        'CloseBox
+        '
+        Me.CloseBox.Image = Global.MineImator_Helper.My.Resources.Resources.closeButton
+        Me.CloseBox.Location = New System.Drawing.Point(180, 12)
+        Me.CloseBox.Name = "CloseBox"
+        Me.CloseBox.Size = New System.Drawing.Size(25, 25)
+        Me.CloseBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.CloseBox.TabIndex = 3
+        Me.CloseBox.TabStop = False
         '
         'TreeGenBox
         '
@@ -66,21 +58,43 @@ Partial Class Toolbar
         Me.TreeGenBox.TabIndex = 2
         Me.TreeGenBox.TabStop = False
         '
+        'FrameCalcBox
+        '
+        Me.FrameCalcBox.Image = Global.MineImator_Helper.My.Resources.Resources.frameCalc
+        Me.FrameCalcBox.Location = New System.Drawing.Point(12, 12)
+        Me.FrameCalcBox.Name = "FrameCalcBox"
+        Me.FrameCalcBox.Size = New System.Drawing.Size(48, 48)
+        Me.FrameCalcBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.FrameCalcBox.TabIndex = 0
+        Me.FrameCalcBox.TabStop = False
+        '
+        'RigDLBox
+        '
+        Me.RigDLBox.Image = Global.MineImator_Helper.My.Resources.Resources.RigDownload
+        Me.RigDLBox.Location = New System.Drawing.Point(66, 12)
+        Me.RigDLBox.Name = "RigDLBox"
+        Me.RigDLBox.Size = New System.Drawing.Size(48, 48)
+        Me.RigDLBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.RigDLBox.TabIndex = 1
+        Me.RigDLBox.TabStop = False
+        '
         'Toolbar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGray
-        Me.ClientSize = New System.Drawing.Size(181, 70)
+        Me.ClientSize = New System.Drawing.Size(211, 70)
+        Me.Controls.Add(Me.CloseBox)
         Me.Controls.Add(Me.TreeGenBox)
         Me.Controls.Add(Me.FrameCalcBox)
         Me.Controls.Add(Me.RigDLBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Toolbar"
         Me.Text = "Toolbar"
-        CType(Me.RigDLBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FrameCalcBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CloseBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TreeGenBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FrameCalcBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RigDLBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -88,4 +102,5 @@ Partial Class Toolbar
     Friend WithEvents RigDLBox As System.Windows.Forms.PictureBox
     Friend WithEvents MoveTimer As System.Windows.Forms.Timer
     Friend WithEvents TreeGenBox As System.Windows.Forms.PictureBox
+    Friend WithEvents CloseBox As System.Windows.Forms.PictureBox
 End Class
