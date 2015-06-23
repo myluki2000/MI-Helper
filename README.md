@@ -1,6 +1,7 @@
 # MI-Helper
 
 Used libraries:
+
 [SevenZipSharp](https://sevenzipsharp.codeplex.com/)
 
 [7z.dll from 7zip](http://www.7-zip.org/)
