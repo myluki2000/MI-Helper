@@ -7,4 +7,3 @@ Used libraries:
 
 [Substrate Minecraft](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-tools/1261313-sdk-substrate-map-editing-library-for-c-net-1-3-8)
 
-[Bass.dll](http://www.un4seen.com/)
