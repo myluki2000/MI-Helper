@@ -155,4 +155,8 @@ Public Class Toolbar
     Private Sub CloseBox_MouseLeave(sender As Object, e As EventArgs) Handles CloseBox.MouseLeave
         CloseBox.BackColor = Color.Transparent
     End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        SoundTimeline.Show()
+    End Sub
 End Class
